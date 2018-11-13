@@ -1,0 +1,71 @@
+body{
+
+    background: url(vitblur.jpg) no-repeat;
+    background-size:cover;
+     background-attachment: fixed;
+    
+    margin: 0px;
+    
+    }
+   /* #login { 
+        background: url(vit.jpg) no-repeat ;
+        width: 500px; margin: 40px auto;
+        min-height: 600px;
+	    -moz-border-radius: 30px; -webkit-border-radius: 30px;
+      }*/
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+    
+    li {
+        float: left;
+    }
+    
+    li a{
+        display:block;
+        color:white;
+        text-align: center;
+        padding: 14px 36px;
+        text-decoration: none;
+        font-size: 20px;
+    }
+    
+    li a:hover {
+        background-color: #111;
+    }
+    
+    
+    
+    .inpt{
+        color: tomato;
+        font-size: 30px;
+        margin: auto;
+        width: 50%;
+    }
+    
+    .inp{
+        margin: auto;
+        width: 25%;
+        border: none;
+        padding: 12px 20px;
+        border-bottom: solid blue;
+        font-size: 20px;
+    }
+
+    
+    
+
+    #chng{
+        animation: one 5s linear 2s infinite alternate;
+    }
+    
+    #chng2{
+        animation: two 5s linear 2s infinite alternate;
+        position: relative;
+    }
+
+
