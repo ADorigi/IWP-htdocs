@@ -82,9 +82,23 @@ echo "<h1 style=\"color: white; text-align: center\">Welcome DEAN ". $_SESSION['
         ?>
         </td>
         <?php
-          if($row['classrm']=="NULL" && $row['adsw']=="Approved"){
-        ?>
+          if($row['classrm']=="NULL" && $row['adsw']=="Approved" && $row['Dean']=="Rejected"){
 
+        ?>
+            <td>
+        <?php
+          echo "-";
+        ?>
+        </td>
+        <td>
+        <?php
+          echo $row['Dean'];
+        ?>
+        </td> 
+        <?php
+          }
+        else if($row['classrm']=="NULL" && $row['adsw']=="Approved"){
+        ?>
         <td>
         <form method="post" action=approve.php>
             <input type='hidden' name='evname' value=<?php echo "'".$row['evname']."'"; ?>>
@@ -94,6 +108,11 @@ echo "<h1 style=\"color: white; text-align: center\">Welcome DEAN ". $_SESSION['
     		<td>
             		
 					<input type="submit" value="Approve Event">
+	    		</form><br><br>
+          <form method="post" action=reject.php>
+            <input type='hidden' name='evname' value=<?php echo "'".$row['evname']."'"; ?>>
+          <input type='hidden' name='EMPID' value=<?php echo "'".$row['EMPID']."'"; ?>>
+          <input type="submit" value="Reject">
 	    		</form>
         </td>
 	    	<?php

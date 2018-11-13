@@ -87,15 +87,25 @@ echo "<h1 style=\"color: white; text-align: center\">Welcome ". $_SESSION['name'
         </td>
     		<td>
         <?php
-	    		if($row['adsw']=="Pending"){
+					if ($row['adsw']=="Rejected")	{
+				?>
+				REJECTED</td>
+				<?php
+					}
+	    		else if($row['adsw']=="Pending"){
 	    	?>	
 	    		<form method="post" action=approve.php>
 	    			<input type='hidden' name='evname' value=<?php echo "'".$row['evname']."'"; ?>>
 					<input type='hidden' name='EMPID' value=<?php echo "'".$row['EMPID']."'"; ?>>
-					<input type="submit" value="Approve Event">
-	    		</form>
+					<input type="submit" value="Approve Event">					
+	    		</form><br>
+					<form method="post" action=reject.php>
+					<input type='hidden' name='evname' value=<?php echo "'".$row['evname']."'"; ?>>
+					<input type='hidden' name='EMPID' value=<?php echo "'".$row['EMPID']."'"; ?>>
+					<input type="submit" value="Reject">
+					</form>
 	    	<?php
-	    		}
+					}
           else if($row['adsw']=="Approved")
               echo "APPROVED";
 	    	?>
